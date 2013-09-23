@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+float Tchange(float f)
+{
+ float c;
+ c=5/9*(f-12);
+ return(c);
+}
+
+int main()
+{
+ float f,c;
+ cout<<"Input the Fahrenheit degree:"<<endl;
+ cin>>f;
+ cout<<"The Centigrade is"<<Tchange(f)<<endl;
+ return 0;
+}
