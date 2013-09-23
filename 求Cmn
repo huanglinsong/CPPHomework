@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int fac(int n)
+{
+  int t;
+  if(n==1) t=1;
+  else     t=n*fac(n-1);
+  return (t);
+}
+
+int cmn(int m,int n)
+{
+  int r;
+  r=fac(m)/(fac(n)*fac(m-n));
+  return (r);
+}
+
+int main()
+{
+ int m,n;
+ cin>>m>>n;
+ if(m>=1&&n>=1&&m>=n)
+	 cout<<"cmn="<<cmn(m,n)<<endl;
+ else
+	 cout<<"Error"<<endl;
+ return 0;
+}
