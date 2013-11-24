@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 class SafeArray{
         int count;
         int* arr;
