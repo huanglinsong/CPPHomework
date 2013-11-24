@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+class SafeArray{
+        int count;
+        int* arr;
+        int num;
+public:
+        SafeArray(int n){
+                count=n;
+                arr=new int[count];
+                num=0;
+        }
+        ~SafeArray(){
+                free(arr);
+        }
+        int &operator[](int index)const{
+                if(index>=0&&index<count)
+                return arr[index];
+                else{
+                        cout<<"Êý×éÔ½½ç"<<endl;
+                        system("pause");
+                        exit(0);
+                }
+        }
+};
+
+
+int main(){
+        cout<<"²âÊÔ°²È«Êý×é"<<endl;
+        SafeArray arr(10);
+        for(int i=0;i<10;i++){
+                arr[i]=i;
+        }
+        arr[3]=10;
+        for(int i=0;i<10;i++){
+                cout<<arr[i]<<"\t";
+        }
+        cout<<arr[10]<<endl;
+        system("pause");
+        return 0;
+}
